@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Расписание Сергеевой О.А.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="date" id="currentDate"></div>
+            <div class="week" id="currentWeek"></div>
+        </div>
+        <div class="segmented-control">
+            <input type="radio" name="week" id="evenWeek" checked>
+            <label for="evenWeek" onclick="toggleWeek('even')">Чётная</label>
+            <input type="radio" name="week" id="oddWeek">
+            <label for="oddWeek" onclick="toggleWeek('odd')">Нечётная</label>
+        </div>
+
+        <!-- Чётная неделя -->
+        <div id="evenWeekTable">
+            <table>
+                <thead>
+                    <tr>
+                        <th>День</th>
+                        <th>Время</th>
+                        <th>Занятие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Вторник</td>
+                        <td>4 пара<br>13:30 - 15:05</td>
+                        <td><em>Python</em> <br> <strong>Лекция</strong> <br> Группа М-241, ауд. 2229</td>
+                    </tr>
+                    <tr>
+                        <td>5 пара<br>15:30 - 17:05</td>
+                        <td><em>Основы криптографии</em> <br> <strong>Лекция</strong> <br> Группа М-221, ауд. 1517</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">Среда</td>
+                        <td>1 пара<br>8:00 - 9:35</td>
+                        <td><em>Математический анализ</em> <br> <strong>Лекция</strong> <br> Группа Ф-241, ауд. 2204</td>
+                    </tr>
+                    <tr>
+                        <td>2 пара<br>9:45 - 11:20</td>
+                        <td><em>Римановы поверхности</em> <br> <strong>Лекция</strong> <br> Группа МКН-211, ауд. 2229</td>
+                    </tr>
+                    <tr>
+                        <td>3 пара<br>11:45 - 13:20</td>
+                        <td><em>Римановы поверхности</em> <br> <strong>Практика</strong> <br> Группа МКН-211, ауд. 2229</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">Четверг</td>
+                        <td>2 пара<br>9:45 - 11:20</td>
+                        <td><em>Математический анализ</em> <br> <strong>Лекция</strong> <br> Группа КБ-241, ауд. 5104</td>
+                    </tr>
+                    <tr>
+                        <td>3 пара<br>11:45 - 13:20</td>
+                        <td><em>Теория функций комплексного переменного</em> <br> <strong>Практика</strong> <br> Группа М-231, ауд. 5106</td>
+                    </tr>
+                    <tr>
+                        <td>4 пара<br>13:30 - 15:05</td>
+                        <td><em>Теория функций комплексного переменного</em> <br> <strong>Лекция</strong> <br> Группа М-231, ауд. 5106</td>
+                    </tr>
+                    <tr>
+                        <td>5 пара<br>15:30 - 17:05</td>
+                        <td><em>Математический анализ</em> <br> <strong>Лекция</strong> <br> Группа М-231, ауд. 5106</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Пятница</td>
+                        <td>3 пара<br>11:45 - 13:20</td>
+                        <td><em>Теоретико-числовые методы в криптографии</em> <br> <strong>Лабораторная</strong> <br> Группа КБ-221, ауд. 2218</td>
+                    </tr>
+                    <tr>
+                        <td>4 пара<br>13:30 - 15:05</td>
+                        <td><em>Математический анализ</em> <br> <strong>Лекция</strong> <br> Группа КБ-241, ауд. 5120</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Нечётная неделя -->
+        <div id="oddWeekTable" style="display:none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>День</th>
+                        <th>Время</th>
+                        <th>Занятие</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">Вторник</td>
+                        <td>4 пара<br>13:30 - 15:05</td>
+                        <td><em>Python</em> <br> <strong>Лекция</strong> <br> Группа М-221, ауд. 1517</td>
+                    </tr>
+                    <tr>
+                        <td>5 пара<br>15:30 - 17:05</td>
+                        <td><em>Основы криптографии</em> <br> <strong>Практика</strong> <br> Группа М-221, ауд. 1517</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="3">Среда</td>
+                        <td>1 пара<br>8:00 - 9:35</td>
+                        <td><em>Математический анализ</em> <br> <strong>Лекция</strong> <br> Группа Ф-241, ауд. 2204</td>
+                    </tr>
+                    <tr>
+                        <td>2 пара<br>9:45 - 11:20</td>
+                        <td><em>Римановы поверхности</em> <br> <strong>Лекция</strong> <br> Группа МКН-211, ауд. 2229</td>
+                    </tr>
+                    <tr>
+                        <td>3 пара<br>11:45 - 13:20</td>
+                        <td><em>Римановы поверхности</em> <br> <strong>Практика</strong> <br> Группа МКН-211, ауд. 2229</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">Четверг</td>
+                        <td>2 пара<br>9:45 - 11:20</td>
+                        <td><em>Математический анализ</em> <br> <strong>Лекция</strong> <br> Группа КБ-241, ауд. 5104</td>
+                    </tr>
+                    <tr>
+                        <td>3 пара<br>11:45 - 13:20</td>
+                        <td><em>Математический анализ</em> <br> <strong>Лекция</strong> <br> Группа Ф-241, ауд. 2210</td>
+                    </tr>
+                    <tr>
+                        <td>4 пара<br>13:30 - 15:05</td>
+                        <td><em>Математический анализ</em> <br> <strong>Лекция</strong> <br> Группа МКН-231, ауд. 5106</td>
+                    </tr>
+                    <tr>
+                        <td>5 пара<br>15:30 - 17:05</td>
+                        <td><em>Математический анализ</em> <br> <strong>Лекция</strong> <br> Группа М-231, ауд. 5106</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Пятница</td>
+                        <td>3 пара<br>11:45 - 13:20</td>
+                        <td><em>Теоретико-числовые методы в криптографии</em> <br> <strong>Лабораторная</strong> <br> Группа КБ-221, ауд. 2218</td>
+                    </tr>
+                    <tr>
+                        <td>4 пара<br>13:30 - 15:05</td>
+                        <td><em>Теоретико-числовые методы в криптографии</em> <br> <strong>Лекция</strong> <br> Группа КБ-221, ауд. 2226</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
